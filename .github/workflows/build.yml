@@ -48,9 +48,9 @@ jobs:
           target: base
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ env.REGISTRY }}/${{ env.GITHUB_REPOSITORY_OWNER }}/php:${{ matrix.php_minor }}-base
-            ${{ env.REGISTRY }}/${{ env.GITHUB_REPOSITORY_OWNER }}/php:${{ matrix.php_version }}-base
-            ${{ env.REGISTRY }}/${{ env.GITHUB_REPOSITORY_OWNER }}/php:${{ matrix.php_minor }}-base-${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/php:${{ matrix.php_minor }}-base
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/php:${{ matrix.php_version }}-base
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/php:${{ matrix.php_minor }}-base-${{ github.sha }}
           build-args: |
             PHP_VERSION=${{ matrix.php_version }}
             DISTRO=${{ matrix.distro }}
@@ -85,9 +85,9 @@ jobs:
           target: ci
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ env.REGISTRY }}/${{ env.GITHUB_REPOSITORY_OWNER }}/php:7.4-ci
-            ${{ env.REGISTRY }}/${{ env.GITHUB_REPOSITORY_OWNER }}/php:7.4.33-ci
-            ${{ env.REGISTRY }}/${{ env.GITHUB_REPOSITORY_OWNER }}/php:7.4-ci-${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/php:7.4-ci
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/php:7.4.33-ci
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/php:7.4-ci-${{ github.sha }}
           build-args: |
             PHP_VERSION=7.4.33
             DISTRO=bullseye
@@ -123,9 +123,9 @@ jobs:
           target: base
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            ${{ env.REGISTRY }}/${{ env.GITHUB_REPOSITORY_OWNER }}/frankenphp:8.5-base
-            ${{ env.REGISTRY }}/${{ env.GITHUB_REPOSITORY_OWNER }}/frankenphp:8.5.5-base
-            ${{ env.REGISTRY }}/${{ env.GITHUB_REPOSITORY_OWNER }}/frankenphp:8.5-base-${{ github.sha }}
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/frankenphp:8.5-base
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/frankenphp:8.5.5-base
+            ${{ env.REGISTRY }}/${{ github.repository_owner }}/frankenphp:8.5-base-${{ github.sha }}
           build-args: |
             FRANKENPHP_VERSION=${{ env.FRANKENPHP_VERSION }}
             PHP_VERSION=8.5.5
